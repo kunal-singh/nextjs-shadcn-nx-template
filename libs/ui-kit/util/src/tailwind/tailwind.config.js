@@ -1,5 +1,3 @@
-// libs/ui-kit/util/src/tailwind/tailwind.config.js
-
 // eslint-disable-next-line @typescript-eslint/unbound-method
 const { join } = require('path');
 const TailwindAnimate = require('tailwindcss-animate');
@@ -12,6 +10,13 @@ module.exports = {
     join(__dirname, '../../../ui/**/*.{js,jsx,ts,tsx}'),
   ],
   theme: {
+    container: {
+      center: true,
+      padding: '2rem',
+      screens: {
+        '2xl': '1400px',
+      },
+    },
     extend: {
       colors: {
         border: 'hsl(var(--border))',

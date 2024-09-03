@@ -56,23 +56,30 @@ function Index() {
         </CardHeader>
         <CardContent>
           <h3 className="text-lg font-semibold mb-2">Features</h3>
-          <div className="flex flex-wrap gap-2 mr-1 w-full">
+          <div className="flex flex-wrap -m-1 mb-4">
             {features.map((feature, index) => (
-              <Badge key={index}>{feature}</Badge>
+              <div className="p-1" key={index}>
+                <Badge
+                  className="text-xs whitespace-nowrap"
+                  variant="secondary"
+                >
+                  {feature}
+                </Badge>
+              </div>
             ))}
           </div>
           <h3 className="text-lg font-semibold mb-2">Key Dependencies</h3>
           <Table>
             <TableHeader>
               <TableRow>
-                <TableHead>Dependency</TableHead>
+                <TableHead className="w-1/2">Dependency</TableHead>
                 <TableHead>Version</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
               {dependencies.map((dep, index) => (
                 <TableRow key={index}>
-                  <TableCell>{dep.name}</TableCell>
+                  <TableCell className="font-medium">{dep.name}</TableCell>
                   <TableCell>{dep.version}</TableCell>
                 </TableRow>
               ))}
@@ -85,6 +92,8 @@ function Index() {
               <a
                 className="text-blue-500 hover:underline"
                 href="https://github.com/kunal-singh/nextjs-shadcn-nx-template"
+                rel="noopener noreferrer"
+                target="_blank"
               >
                 GitHub repository README
               </a>
